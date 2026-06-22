@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+     <title>Moje knihovna slovíček</title>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="icon" type="img/png" sizes="32x32" href="img/favicon-32x32.png">
+     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+          integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+     <link rel="stylesheet" href="css/style.css">
+     <link rel="stylesheet" href="css/queries.css">
+</head>
+
+<body>
+     <h1>Moje knihovna slovíček <i class="fa-solid fa-book-open" style="color: rgb(67, 105, 138);"></i></h1>
+     <!-- SEKCE 1: knihovna a avkládání -->
+     <div class="box">
+          <h2>📚 Moje slovní zásoba (Knihovna)</h2>
+          <div class="flex">
+               <input type="text" id="foreignWord" placeholder="Cizí slovo (např. Dog)">
+               <input type="text" id="czechWord" placeholder="Český překlad (např. Pes)">
+               <button onclick="addWord()">Uložit do knihovny</button>
+          </div>
+
+          <div class="table-container">
+               <table>
+                    <thead>
+                         <tr>
+                              <th>Cizí slovo</th>
+                              <th>Český překlad</th>
+                              <th style="width: 80px;">Akce</th>
+                         </tr>
+                    </thead>
+                    <tbody id="vocabTableBody">
+                         <!-- Sem JS generuje řádky knihovny -->
+                    </tbody>
+               </table>
+          </div>
+     </div>
+
+     <!-- SEKCE 2: TEST -->
+     <div class="box">
+          <h2>🎯 Zkoušení z knihovny</h2>
+          <button id="startBtn" onclick="startTest()">Spustit test</button>
+
+          <div id="testArea" class="hidden">
+               <div class="test-word" id="wordToTranslate">---</div>
+               <div class="flex">
+                    <input type="text" id="userAnswer" placeholder="Tvůj překlad..."
+                         onkeydown="if(event.key==='Enter') checkAnswer()">
+                    <button id="checkBtn" onclick="checkAnswer()">Zkontrolovat</button>
+               </div>
+               <div id="feedback" class="result hidden"></div>
+               <button id="nextBtn" class="secondary-btn hidden" onclick="startTest()">Chci další slovíčko ➡️</button>
+          </div>
+     </div>
+
+     <script src="js/script.js"></script>
+</body>
+
+</html>
