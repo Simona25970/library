@@ -63,6 +63,7 @@ button {
      border-radius: 4px;
      cursor: pointer;
      font-weight: bold;
+     letter-spacing: 1.5px;
      white-space: nowrap;
 }
 
@@ -71,6 +72,7 @@ button:hover {
 }
 
 .secondary-btn {
+     letter-spacing: 1.5px;
      background: #64748b;
      margin-top: 0.5rem;
      width: 100%;
