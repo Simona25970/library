@@ -51,6 +51,9 @@ function updateLibraryTable() {
 function startTest() {
      if (vocabulary.length === 0) return alert('Nejprve přidej slovíčka do knihovny!');
 
+     // tento řádek skryje knihovnu při startu testu
+     document.getElementById('libraryBox').classList.add('hidden');
+
      document.getElementById('testArea').classList.remove('hidden');
      document.getElementById('feedback').classList.add('hidden');
      document.getElementById('nextBtn').classList.add('hidden');
@@ -94,5 +97,9 @@ function checkAnswer() {
 
 function endTest() {
      document.getElementById('testArea').classList.add('hidden');
+
+     // tento řádek ukáže knihovnu, pokud se test ukončí
+     document.getElementById('libraryBox').classList.remove('hidden');
+
      currentWordIndex = null;
 }
